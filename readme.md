@@ -58,7 +58,7 @@ is compiled to:
 
 ```css
 .group:after,
-.my-special-container {
+.my-special-container:after {
 	visibility: hidden;
 	display: block;
 	font-size: 0;
@@ -67,9 +67,9 @@ is compiled to:
 	height: 0;
 }
 *:first-child+html .group,
-.my-special-container .group	{ zoom: 1; } /* IE7 */
+*:first-child+html .my-special-container	{ zoom: 1; } /* IE7 */
 * html .group,
-.my-special-container .group	{ zoom: 1; } /* IE6 */
+* html .my-special-container				{ zoom: 1; } /* IE6 */
 
 .my-special-container {
 	background-color: blue;
@@ -116,13 +116,13 @@ is compiled to:
 }
 ```
 
-### Additional attributes
+### Additional arguments (optional)
 
-All three image replacement mixins have three optional attributes:
+All three image replacement mixins have three optional arguments:
 
-#### $image
+#### $image (the image file)
 
-If you want to set the background to a single image, then just set the image filename as the first attribute (default = null).
+If you want to set the background to a single image, then just set the image filename as the first argument (default = null).
 
 ```scss
 .logo {
@@ -165,3 +165,61 @@ $sprites: sprite-map("icon/*.png", $spacing: 20px, $layout: vertical);
 }
 ```
 
+#### $display (block, inline-block, table etc.)
+
+With the second argument you can define the display mode. This might be useful if your element is an inline element like a span (default = null).
+
+```scss
+.logo {
+	@include image-replace("logo.png", block);
+}
+```
+
+is compiled to:
+
+```css
+.logo {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	border: 0;
+	background-color: transparent;
+	dispplay: block;
+	background: transparent url('../../your/compass/image/directory/logo.png?1234567') no-repeat;
+	width: 200px;
+	height: 120px;
+}
+```
+
+You can also use only the second argument by setting the first to null:
+
+```scss
+.logo {
+	@include image-replace(null, block);
+}
+```
+
+#### $reset-border-background (true or false)
+
+The third argument controls the reset options for borders and the background color (default = true);
+
+```scss
+.logo {
+	@include image-replace("logo.png", null, false);
+}
+```
+
+is compiled to:
+
+```css
+.logo {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	background: transparent url('../../your/compass/image/directory/logo.png?1234567') no-repeat;
+	width: 200px;
+	height: 120px;
+}
+```
+
+**To do:** If the $image argument is set, the background color reset isn't needed as compass sets the background color to transparent by itself.
