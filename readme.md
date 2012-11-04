@@ -86,6 +86,8 @@ This file includes three different image replacement mixins and two helper mixin
 2. **image-replace-h5bp()** from HTML5 Boilerplate (2012) ([github.com/h5bp/html5-boilerplate/blob/master/css/main.css](https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css))
 3. **image-replace-indent()** The Phark Method (2003)<br>Very likely the most widely used method. Problematic in RTL situations (or anywhere text-align isn't left).
 
+Find an overview on [css-tricks.com](http://css-tricks.com/css-image-replacement/).
+
 ### How to use
 
 The text inside your container will be replaced by a css background image, but the text is still readable by screenreaders.
