@@ -1,0 +1,77 @@
+// clearfix mixins
+//
+// overview: http://css-tricks.com/snippets/css/clear-fix/
+
+$support-ie6		: true !default;
+$support-ie7		: true !default;
+
+// clearfix based on A.K.A The "Clearfix" hack without IE for Mac support
+// http://css-tricks.com/snippets/css/clear-fix/
+@mixin clearfix($ie7: $support-ie7, $ie6: $support-ie6) {
+	&:after {
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: " ";
+		clear: both;
+		height: 0;
+	}
+	@if $ie7 == true  {
+		*:first-child+html & 	{ zoom: 1; } /* IE7 */
+	}
+	@if $ie6 == true {
+		* html &				{ zoom: 1; } /* IE6 */
+	}
+}
+
+// A.K.A The "Clearfix" hack
+// includes support for IE for Mac
+// http://perishablepress.com/lessons-learned-concerning-the-clearfix-css-hack/
+@mixin clearfix-hack() {
+	&:after {
+	     visibility: hidden;
+	     display: block;
+	     font-size: 0;
+	     content: " ";
+	     clear: both;
+	     height: 0;
+     }
+	& { display: inline-block; }
+	/* start commented backslash hack \*/
+	* html .clearfix { height: 1%; }
+	& { display: block; }
+	/* close commented backslash hack */
+}
+
+// micro clearfix by Nicolas Gallagher
+// http://nicolasgallagher.com/micro-clearfix-hack/
+@mixin micro-clearfix($ie7: $support-ie7, $ie6: $support-ie6) {
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	} 
+	&:after {
+		clear: both;
+	}
+	@if $ie7 == true {
+		zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+	}
+}
+
+// YAML clearfix
+// https://github.com/djesse/yaml4-sass/blob/master/sass/yaml/core/base-modules/_float-handling.scss
+@mixin ym-clearfix() {
+	&:before {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+		content: ".";
+		display: block;
+		font-size: 0;
+		height: 0;
+		visibility: hidden;
+	}
+}
