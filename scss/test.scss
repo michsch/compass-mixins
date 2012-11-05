@@ -1,0 +1,15 @@
+// testing scss file
+
+// import mixins
+@import "clearfix",
+		"image-replacement",
+		"forms";
+
+// begin tests
+.group {
+	@include micro-clearfix();
+}
+
+.ir {
+	@include image-replace();
+}

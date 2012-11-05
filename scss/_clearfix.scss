@@ -17,10 +17,10 @@ $support-ie7		: true !default;
 		height: 0;
 	}
 	@if $ie7 == true  {
-		*:first-child+html & 	{ zoom: 1; } /* IE7 */
+		*:first-child+html & 	{ zoom: 1; /* IE7 */ }
 	}
 	@if $ie6 == true {
-		* html &				{ zoom: 1; } /* IE6 */
+		* html &				{ zoom: 1; /* IE6 */ } 
 	}
 }
 

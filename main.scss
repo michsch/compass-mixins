@@ -1,0 +1,10 @@
+// main CSS for testing
+
+// import all mixins
+@import "mixins";
+
+// beginn tests here
+
+.group {
+	@include clearfix();
+}

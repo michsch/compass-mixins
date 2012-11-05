@@ -18,6 +18,12 @@ and install the  version 3.2.0 alpha 275:
 sudo gem install sass -v 3.2.0.alpha.275
 ```
 
+## Contents
+
+* [Clearfix](#clearfix)
+* [Image Replacement](#image-replacement)
+* [How to test mixins](#how-to-test-mixins)
+
 ## Clearfix
 
 **File:** *_clearfix.scss*
@@ -241,3 +247,35 @@ is compiled to:
 ```
 
 **To do:** If the $image argument is set, the background color reset isn't needed as compass sets the background color to transparent by itself.
+
+## How to test mixins
+
+If you want to test mixins you can use the test.scss. This file is compiled to css/scss/test.css and included in the index.html. Use Compass or Grunt to compile and watch your changes. Grunt will also lint the main.js JavaScript file.
+
+**Compass:**
+
+```bash
+compass watch
+```
+
+### Grunt
+
+For Grunt you'll need node.js. An installer you can find here: [nodejs.org](http://nodejs.org/)
+
+Install Grunt globally:
+
+```bash
+sudo npm install -g grunt
+``
+
+Install Grunt modules locally (execude inside the directory "compass-sass"):
+
+```bash
+npm install
+```
+
+Then you could use the Grunt watch task:
+
+```bash
+grunt
+```

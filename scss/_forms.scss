@@ -1,12 +1,12 @@
 // forms mixins
 
-$foo-id				: #foo !default;
+$foo-id				: '#foo' !default;
 
 
 // custom checkboxes and radio buttons
 // with background images
 // http://www.wufoo.com/2011/06/13/custom-radio-buttons-and-checkboxes/
-@mixin custom-checkbox-radio($selector: '', $foo-id: #foo) {
+@mixin custom-checkbox-radio($selector: '', $foo-id: $foo-id) {
 
 /* 
 Hide the original radios and checkboxes
