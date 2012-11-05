@@ -5,9 +5,9 @@
 
 // import mixins
 @import "clearfix",
-		"image-replacement",
+		"diagnostics",
 		"forms",
-		"diagnostics";
+		"image-replacement";
 
 // begin tests
 
@@ -18,4 +18,3 @@
 .ir {
 	@include image-replace();
 }
-

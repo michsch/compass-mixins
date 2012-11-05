@@ -7,17 +7,14 @@ $foo-id				: '#foo' !default;
 // with background images
 // http://www.wufoo.com/2011/06/13/custom-radio-buttons-and-checkboxes/
 @mixin custom-checkbox-radio($selector: '', $foo-id: $foo-id) {
-
-/* 
-Hide the original radios and checkboxes
-(but still accessible)
-
-:not(#foo) > is a rule filter to block browsers
-that don't support that selector from
-applying rules they shouldn't
-*/
-
-	*:not(#{$foo-id}) > input#{$selector}[type='radio'], 
+	/* Hide the original radios and checkboxes
+	 * (but still accessible)
+	 *
+	 * :not(#foo) > is a rule filter to block browsers
+	 * that don't support that selector from
+	 * applying rules they shouldn't
+	 */
+	*:not(#{$foo-id}) > input#{$selector}[type='radio'],
 	*:not(#{$foo-id}) > input#{$selector}[type='checkbox'] {
 		/* Hide the input, but have it still be clickable */
 		opacity: 0;
@@ -34,7 +31,7 @@ applying rules they shouldn't
 		padding: 5px 0 4px 24px;
 		/* Make look clickable because they are */
 		cursor: pointer;
-		background: url(off.png) left center no-repeat; 
+		background: url(off.png) left center no-repeat;
 	}
 
 	/* Change from unchecked to checked graphic */
@@ -53,7 +50,7 @@ applying rules they shouldn't
 @mixin custom-checkbox-image($image, $image-checked, $selector: '', $foo-id: $foo-id) {
 	#{$foo-id}:checked::before,
 	input#{$selector}[type="checkbox"] {
-		position:absolute;
+		position: absolute;
 		clip: rect(0,0,0,0);
 		clip: rect(0 0 0 0);
 	}
@@ -73,7 +70,7 @@ applying rules they shouldn't
 @mixin custom-radio-image($image, $image-checked, $selector: '', $foo-id: $foo-id) {
 	#{$foo-id}:checked::before,
 	input#{$selector}[type="radio"] {
-		position:absolute;
+		position: absolute;
 		clip: rect(0,0,0,0);
 		clip: rect(0 0 0 0);
 	}
@@ -95,7 +92,7 @@ applying rules they shouldn't
 		color: $color;
 	}
 
-	:-moz-placeholder {  
-		color: $color;  
+	:-moz-placeholder {
+		color: $color;
 	}
 }

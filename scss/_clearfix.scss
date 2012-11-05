@@ -20,7 +20,7 @@ $support-ie7		: true !default;
 		*:first-child+html & 	{ zoom: 1; /* IE7 */ }
 	}
 	@if $ie6 == true {
-		* html &				{ zoom: 1; /* IE6 */ } 
+		* html &				{ zoom: 1; /* IE6 */ }
 	}
 }
 
@@ -55,7 +55,7 @@ $support-ie7		: true !default;
 	&:after {
 		content: "";
 		display: table;
-	} 
+	}
 	&:after {
 		clear: both;
 	}
