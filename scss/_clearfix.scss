@@ -35,12 +35,17 @@ $support-ie7		: true !default;
 		content: " ";
 		clear: both;
 		height: 0;
-     }
+	}
 	& { display: inline-block; }
-	/* start commented backslash hack \*/
-	* html .clearfix { height: 1%; }
-	& { display: block; }
-	/* close commented backslash hack */
+	
+	* html & {
+		/* start commented backslash hack \*/
+		height: 1%;
+	}
+	& {
+		display: block;
+		/* close commented backslash hack */
+	}
 }
 
 // micro clearfix by Nicolas Gallagher

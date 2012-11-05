@@ -1,19 +1,28 @@
-/* line 11, ../../scss/test.scss */
-.group {
-  zoom: 1;
-  /* For IE 6/7 (trigger hasLayout) */
-}
-/* line 50, ../../scss/_clearfix.scss */
-.group:before, .group:after {
-  content: "";
-  display: table;
-}
-/* line 54, ../../scss/_clearfix.scss */
+/* test.css for compass-mixins (generated from test.scss)
+ * https://github.com/michsch/compass-mixins
+ * Copyright (c) 2012 Michael Schulze; MIT license
+ */
+/* line 11, ../../scss/_clearfix.scss */
 .group:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
   clear: both;
+  height: 0;
+}
+/* line 20, ../../scss/_clearfix.scss */
+*:first-child + html .group {
+  zoom: 1;
+  /* IE7 */
+}
+/* line 23, ../../scss/_clearfix.scss */
+* html .group {
+  zoom: 1;
+  /* IE6 */
 }
 
-/* line 15, ../../scss/test.scss */
+/* line 18, ../../scss/test.scss */
 .ir {
   font: 0/0 a;
   text-shadow: none;

@@ -1,0 +1,32 @@
+/* test.css for compass-mixins (generated from test.sass)
+ * https://github.com/michsch/compass-mixins
+ * Copyright (c) 2012 Michael Schulze; MIT license
+ */
+/* line 11, ../../sass/_clearfix.sass */
+.group:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+/* line 19, ../../sass/_clearfix.sass */
+*:first-child + html .group {
+  zoom: 1;
+  /* IE7 */
+}
+/* line 23, ../../sass/_clearfix.sass */
+* html .group {
+  zoom: 1;
+  /* IE6 */
+}
+
+/* line 13, ../../sass/test.sass */
+.ir {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  border: 0;
+  background-color: transparent;
+}

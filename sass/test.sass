@@ -1,7 +1,14 @@
-// testing sass file
+/*! test.css for compass-mixins (generated from test.sass)
+ * https://github.com/michsch/compass-mixins
+ * Copyright (c) 2012 Michael Schulze; MIT license
+ */
 
 // import mixins
-@import "diagnostics"
+@import "clearfix", "diagnostics", "image-replacement"
 
 // begin tests
+.group
+	+clearfix
 
+.ir
+	+image-replace

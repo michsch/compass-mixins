@@ -112,7 +112,7 @@ module.exports = function(grunt) {
 				src: 'sass',
 				dest: 'css/sass',
 				//outputstyle: 'compressed',
-				linecomments: false,
+				linecomments: true,
 				forcecompile: true,
 				debugsass: false,
 				images: 'img'
