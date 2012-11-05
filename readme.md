@@ -266,7 +266,7 @@ Install Grunt globally:
 
 ```bash
 sudo npm install -g grunt
-``
+```
 
 Install Grunt modules locally (execude inside the directory "compass-sass"):
 
