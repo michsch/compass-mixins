@@ -1,4 +1,4 @@
-/* line 9, ../../scss/test.scss */
+/* line 11, ../../scss/test.scss */
 .group {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
@@ -13,7 +13,7 @@
   clear: both;
 }
 
-/* line 13, ../../scss/test.scss */
+/* line 15, ../../scss/test.scss */
 .ir {
   font: 0/0 a;
   text-shadow: none;
