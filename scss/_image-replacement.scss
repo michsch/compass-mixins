@@ -73,7 +73,7 @@
 }
 
 // set background image and dimensions
-@mixin image-and-dimensions($image, $display: null){
+@mixin image-and-dimensions($image, $display: null) {
 	@if $display != null {
 		display: $display;
 	}

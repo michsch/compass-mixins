@@ -1,13 +1,18 @@
-// testing scss file
+/*! test.css for compass-mixins (generated from test.scss)
+ * https://github.com/michsch/compass-mixins
+ * Copyright (c) 2012 Michael Schulze; MIT license
+ */
 
 // import mixins
 @import "clearfix",
-		"image-replacement",
-		"forms";
+		"diagnostics",
+		"forms",
+		"image-replacement";
 
 // begin tests
+
 .group {
-	@include micro-clearfix();
+	@include clearfix();
 }
 
 .ir {

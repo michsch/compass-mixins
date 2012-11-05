@@ -104,7 +104,7 @@ module.exports = function(grunt) {
 				src: 'scss',
 				dest: 'css/scss',
 				linecomments: true,
-				forcecompile: false,
+				forcecompile: true,
 				debugsass: false,
 				images: 'img'
 			},
@@ -112,7 +112,7 @@ module.exports = function(grunt) {
 				src: 'sass',
 				dest: 'css/sass',
 				//outputstyle: 'compressed',
-				linecomments: false,
+				linecomments: true,
 				forcecompile: true,
 				debugsass: false,
 				images: 'img'
@@ -137,8 +137,12 @@ module.exports = function(grunt) {
 				tasks: ['compass:scss', 'coffee', 'lint', 'concat:plugins']
 			},
 			sass: {
-				files: ['sass/**/*.sass', 'grunt.js', 'js/plugins/**/*.js', 'js/coffee/*.coffee'],
+				files: ['scss/**/*.scss','sass/**/*.sass', 'grunt.js', 'js/plugins/**/*.js', 'js/coffee/*.coffee'],
 				tasks: ['compass:sass', 'coffee', 'lint', 'concat:plugins']
+			},
+			s: {
+				files: ['scss/**/*.scss', 'sass/**/*.sass', 'grunt.js', 'js/plugins/**/*.js', 'js/coffee/*.coffee'],
+				tasks: ['compass:scss', 'compass:sass', 'coffee', 'lint', 'concat:plugins']
 			},
 			dev: {
 				files: ['grunt.js', 'js/plugins/**/*.js', 'js/coffee/*.coffee', 'sass/**/*.scss'],
@@ -151,6 +155,7 @@ module.exports = function(grunt) {
 		}
 	});
 
+	grunt.registerTask('s', 'compass:scss compass:sass coffee lint concat:plugins');
 	grunt.registerTask('scss', 'compass:scss coffee lint concat:plugins');
 	grunt.registerTask('sass', 'compass:sass coffee lint concat:plugins');
 
@@ -158,5 +163,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('prod', 'compass:scss coffee lint concat min compress');
 
 	// Default task.
-	grunt.registerTask('default', 'watch:scss');
+	grunt.registerTask('default', 'watch:s');
 };

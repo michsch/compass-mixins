@@ -20,7 +20,7 @@ $support-ie7		: true !default;
 		*:first-child+html & 	{ zoom: 1; /* IE7 */ }
 	}
 	@if $ie6 == true {
-		* html &				{ zoom: 1; /* IE6 */ } 
+		* html &				{ zoom: 1; /* IE6 */ }
 	}
 }
 
@@ -35,12 +35,17 @@ $support-ie7		: true !default;
 		content: " ";
 		clear: both;
 		height: 0;
-     }
+	}
 	& { display: inline-block; }
-	/* start commented backslash hack \*/
-	* html .clearfix { height: 1%; }
-	& { display: block; }
-	/* close commented backslash hack */
+	
+	* html & {
+		/* start commented backslash hack \*/
+		height: 1%;
+	}
+	& {
+		display: block;
+		/* close commented backslash hack */
+	}
 }
 
 // micro clearfix by Nicolas Gallagher
@@ -50,7 +55,7 @@ $support-ie7		: true !default;
 	&:after {
 		content: "";
 		display: table;
-	} 
+	}
 	&:after {
 		clear: both;
 	}

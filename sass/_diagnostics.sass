@@ -1,0 +1,65 @@
+// CSS Diagnostics
+
+$diagnostics-proposed			: false
+$diagnostics-empty-color		: yellow
+$diagnostics-deprecated-color	: red
+$diagnostics-proposed-color		: #33FF00
+
+// CSS Diagnostics
+// http://css-tricks.com/snippets/css/css-diagnostics/
+=diagnostics($proposed: $diagnostics-proposed, $empty-color: $diagnostics-empty-color, $deprecated-color: $diagnostics-deprecated-color, $proposed-color: $diagnostics-proposed-color)
+	/* Empty Elements */
+	div:empty,
+	span:empty,
+	li:empty,
+	p:empty,
+	td:empty,
+	th:empty
+		padding: 20px
+		border: 5px dotted $empty-color !important
+
+	/* Empty Attributes */
+	*[alt=""],
+	*[title=""],
+	*[class=""],
+	*[id=""],
+	a[href=""],
+	a[href="#"]
+		border: 5px solid $empty-color !important
+
+	/* Deprecated Elements */
+	applet,
+	basefont,
+	center,
+	dir,
+	font,
+	isindex,
+	menu,
+	s,
+	strike,
+	u
+		border: 5px dotted $deprecated-color !important
+
+	/* Deprecated Attributes */
+	*[background], *[bgcolor], *[clear], *[color], *[compact], *[noshade], *[nowrap], *[size], *[start],
+	*[bottommargin], *[leftmargin], *[rightmargin], *[topmargin], *[marginheight], *[marginwidth], *[alink], *[link], *[text], *[vlink],
+	*[align], *[valign],
+	*[hspace], *[vspace],
+	*[height], *[width],
+	ul[type], ol[type], li[type]
+		border: 5px solid $deprecated-color !important
+
+	@if $proposed == true
+		/* Proposed Deprecated Elements */
+		input[type="button"],
+		big,
+		tt
+			border: 5px dotted $proposed-color !important
+
+		/* Proposed Deprecated Attributes */
+		*[border],
+		a[target],
+		table[cellpadding],
+		table[cellspacing],
+		*[name]
+			border: 5px solid $proposed-color !important
