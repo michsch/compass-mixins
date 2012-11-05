@@ -2,6 +2,22 @@
 
 This is just my personal compilation of useful Compass mixins.
 
+**Dependencies**: Sass >= 3.2, Compass >= 0.12.2
+
+**Important Note**
+
+I use mixins which use Compass' image-url() inside of mixins. There's a bug when using Sass 3.2.1 in combination with 0.12.2 which creates wrong image paths in compiled CSS ([See Compass issue 989](https://github.com/chriseppstein/compass/issues/989)).
+To fix this just uninstall Sass 3.2.1:
+
+```bash
+sudo gem uninstall sass
+```
+and install the  version 3.2.0 alpha 275:
+
+```bash
+sudo gem install sass -v 3.2.0.alpha.275
+```
+
 ## Clearfix
 
 **File:** *_clearfix.scss*
