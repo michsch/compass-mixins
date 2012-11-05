@@ -1,0 +1,101 @@
+// forms mixins
+
+$foo-id				: #foo !default;
+
+
+// custom checkboxes and radio buttons
+// with background images
+// http://www.wufoo.com/2011/06/13/custom-radio-buttons-and-checkboxes/
+@mixin custom-checkbox-radio($selector: '', $foo-id: #foo) {
+
+/* 
+Hide the original radios and checkboxes
+(but still accessible)
+
+:not(#foo) > is a rule filter to block browsers
+that don't support that selector from
+applying rules they shouldn't
+*/
+
+	*:not(#{$foo-id}) > input#{$selector}[type='radio'], 
+	*:not(#{$foo-id}) > input#{$selector}[type='checkbox'] {
+		/* Hide the input, but have it still be clickable */
+		opacity: 0;
+
+		float: left;
+		width: 18px;
+	}
+
+	li:not(#{$foo-id}) > input#{$selector}[type='radio'] + label,
+	li:not(#{$foo-id}) > input#{$selector}[type='checkbox'] + label {
+		margin: 0;
+		clear: none;
+		/* Left padding makes room for image */
+		padding: 5px 0 4px 24px;
+		/* Make look clickable because they are */
+		cursor: pointer;
+		background: url(off.png) left center no-repeat; 
+	}
+
+	/* Change from unchecked to checked graphic */
+	li:not(#{$foo-id}) > input#{$selector}[type='radio']:checked + label {
+		background-image: url(radio.png);
+	}
+	li:not(#{$foo-id}) > input#{$selector}[type='checkbox']:checked + label {
+		background-image: url(check.png);
+	}
+
+}
+
+
+// custom checkboxes
+// http://lea.verou.me/2011/05/rule-filtering-based-on-specific-selectors-support/
+@mixin custom-checkbox-image($image, $image-checked, $selector: '', $foo-id: $foo-id) {
+	#{$foo-id}:checked::before,
+	input#{$selector}[type="checkbox"] {
+		position:absolute;
+		clip: rect(0,0,0,0);
+		clip: rect(0 0 0 0);
+	}
+
+	#{$foo-id}:checked,
+	input#{$selector}[type="checkbox"] + label::before {
+		content: url('#{$image}');
+	}
+
+	input#{$selector}[type="checkbox"]:checked + label::before {
+		content: url('#{$image-checked}');
+	}
+}
+
+// custom radio buttons
+// http://lea.verou.me/2011/05/rule-filtering-based-on-specific-selectors-support/
+@mixin custom-radio-image($image, $image-checked, $selector: '', $foo-id: $foo-id) {
+	#{$foo-id}:checked::before,
+	input#{$selector}[type="radio"] {
+		position:absolute;
+		clip: rect(0,0,0,0);
+		clip: rect(0 0 0 0);
+	}
+
+	#{$foo-id}:checked,
+	input#{$selector}[type="radio"] + label::before {
+		content: url('#{$image}');
+	}
+
+	input#{$selector}[type="radio"]:checked + label::before {
+		content: url('#{$image-checked}');
+	}
+}
+
+// placeholder text styling
+// http://css-tricks.com/snippets/css/style-placeholder-text/
+@mixin placeholder-style($color) {
+	::-webkit-input-placeholder {
+		color: $color;
+	}
+
+	:-moz-placeholder {  
+		color: $color;  
+	}
+}

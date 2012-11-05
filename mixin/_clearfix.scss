@@ -29,12 +29,12 @@ $support-ie7		: true !default;
 // http://perishablepress.com/lessons-learned-concerning-the-clearfix-css-hack/
 @mixin clearfix-hack() {
 	&:after {
-	     visibility: hidden;
-	     display: block;
-	     font-size: 0;
-	     content: " ";
-	     clear: both;
-	     height: 0;
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: " ";
+		clear: both;
+		height: 0;
      }
 	& { display: inline-block; }
 	/* start commented backslash hack \*/
